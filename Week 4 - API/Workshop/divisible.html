@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divisible</title>
+    <script>
+        function submitClicked(){
+            var num1 = Number(document.getElementById('numAinput').value);
+            var num2 = Number(document.getElementById('numBinput').value);
+            if (num1 % num2 == 0){
+                    document.getElementById('heading').innerText = "Number A is divisible by Number B";
+                }
+                else{
+                        document.getElementById('heading').innerText = "Number A is not divisible by Number B";
+                }
+        }
+    </script>
+</head>
+<body>
+    Number A <input type="number" name="numA" id="numAinput"><br><br>
+    Number B <input type="number" name="numB" id="numBinput">
+    <button onclick="submitClicked()">Submit</button>
+    <h1>Is A divisible by B?</h1>
+    <h1 id="heading">Yes/No?</h1>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function submitclicked(){
+            var num=Number(document.getElementById('a').value);      
+            var num2=Number(document.getElementById('b').value);               
+            if (num % num2 == 0){
+
+                document.getElementById('heading').innerText="yes";}
+
+            else
+
+            { document.getElementById("heading").innerText="no";
+    
+          }  }
+    </script>
+</head>
+<body>
+    <input type="text" name="fnum" id="a"><br>
+    <input type="text" name="snum" id="b"><br>
+    <button onclick="submitclicked()">submit</button>
+    <h1 id="heading">
+
+    </h1>
+
+</body>
+</html> -->

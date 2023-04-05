@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Workshop 4 Extra</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+    <script>
+        // Make a request for a user with a given ID
+        axios.get('https://jsonplaceholder.typicode.com/users')
+        .then(function (response) {
+            // handle success
+            console.log("This is successful");
+            var users = response.data;
+            for(const user of users){
+                console.log("-----New User-----");
+                console.log(user.name);
+                console.log(user.email);
+                console.log(user.address.city);
+
+                var card = `
+                <div style="border: 2px solid grey; padding: 5px; margin: 10px;">
+                    <h2>${user.name}</h2>
+                    <h3>${user.email}</h3>
+                    <h4>${user.address.city}</h4>
+                </div>
+                `;
+                document.getElementById('container').innerHTML += card;
+            }
+        })
+        .catch(function (error) {
+            // handle error
+            console.log("This is error");
+            console.log(error);
+        }); 
+    </script>
+<body>
+    <div id = "container">
+
+    </div>
+</body>
+</html>

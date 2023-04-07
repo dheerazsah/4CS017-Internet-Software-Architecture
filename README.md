@@ -1,2 +1,5 @@
 # 4CS017 Internet Software Architecture
  
+4CS017 Internet Software Architecture, typically covers the design and development of software systems that operate over the Internet. This course focuses on the architecture and principles of building distributed systems using web technologies. Some of the topics that may be covered in this course include: Understanding the client-server architecture and how it is used to build web applications. Designing and implementing RESTful web services using HTTP methods. Understanding the architecture of web applications, including client-side scripting and server-side scripting, cloud computing and how to design and deploy applications on cloud platforms.
+
+This course provides students with a solid foundation in internet software architecture and prepares them to design and develop scalable and secure web-based applications.

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Web App</title>
+
+    <link rel="stylesheet" href="./style.css">
+    <script src="./weather.js"></script>
+</head>
+<body>
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+        <nav class="header container">
+            <a href="./index.html" class="header__logo">Dhiraj's Weather Web App</a>
+        </nav>  
+    </header>
+
+    <div class="weatherData">
+        <h1 id="cityName"></h1>
+        <h2 id="weatherCondition"></h2>
+        <h3 id="temperature"></h3>
+        <ul>
+            <li id="windSpeed"></li>
+            <li id="windDirection"></li>
+            <li id="pressure"></li>
+            <li id="humidity"></li>
+        </ul>
+
+</div>
+    <main class="main">
+        <!--==================== HOME ====================-->
+        <section class="home section" id="home"> 
+            <div class="home__container container grid">
+                <div class="home__data">
+                    <h2 class="home__title">Weather<br>Forecast</h2><br>
+                    
+                    <div id="weather"> <!-- creating another division for css -->
+                        <div class="weather__container"></div>
+            
+                            
+                                </div>
+
+
+                       
+                    </div>
+                    
+                </div>
+            </div> 
+        </section>
+    </main>
+</body>
+</html>

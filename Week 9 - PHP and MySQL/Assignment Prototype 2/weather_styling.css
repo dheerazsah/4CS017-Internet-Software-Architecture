@@ -1,0 +1,95 @@
+/*==================== GOOGLE FONTS ====================*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/*==================== VARIABLES CSS ====================*/
+:root {
+    /*========== Colors ==========*/
+    --first-color: #74C043; 
+    --second-color: #A6E384;
+    --container-color: #FFF;
+    --title-color: #000000;
+    --title_semi-color:#2b2727d2;
+
+    /*========== Font and typography ==========*/
+    --body-font: 'Poppins', sans-serif;;
+    --big-font-size: 3rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 2rem;
+    --h3-font-size: 1.25rem;
+
+    /*========== Font weight ==========*/
+    --font-medium: 500;
+    --font-semi-bold: 600;
+
+    /*========== Margins ==========*/
+    --mb-1: 0.5rem;
+    --mb-2: 1rem;
+    --mb-3: 1.5rem;
+    --mb-4: 2rem;
+    --mb-5: 2.5rem;
+    --mb-6: 3rem;
+}
+
+
+body{
+    margin: var(--header-height) 0 0 0;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    color: var(--second-color); 
+}
+h1,h2{
+    margin: 0;
+    color: var(--title-color);
+    font-weight: var(--font-semi-bold);
+}
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+.section{
+    padding-top: 4rem;
+    padding-left: 3rem;
+}
+/*==================== HEADER ====================*/
+ .container{
+    max-width: 768px;
+    margin-left: var(--mb-1-6);
+    margin-right: var(--mb-1-5);
+} 
+.header{
+    position: fixed;  
+    display:flex;
+}
+.header__logo{
+    color: var(--title-color);
+    font-weight: var(--font-medium);
+    margin-left: var(--mb-6);
+    margin-top: var(--mb-4);
+}
+.header__logo:hover{
+    color: var(--first-color);
+}
+
+.temp-container {
+    color: var(--first-color);
+    font-size: 100px;
+}
+
+.main-container {
+    margin-left: 30%;
+    text-align: justify;
+}
+
+.status {
+   color: var(--title_semi-color); 
+}
+
+.details-container {
+    font-size: 15px;
+}
+
+

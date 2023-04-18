@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./weather_script.js"></script>
+    <link rel="stylesheet" href="./weather_styling.css">
+    <title>Weather Web Application</title>
+</head>
+<body>
+    <!-- ==================== HEADER ==================== -->
+    <header class="header" id="header">
+        <nav class="header container">
+            <a href="#" class="header__logo">Dhiraj's Weather Web App</a>
+        </nav>  
+    </header>
+
+     <!-- ==================== WEATHER MAIN ==================== -->
+     <!-- to dispaly the values fetched from API-->
+    <div class="main-container section">
+        <h1 id="city"></h1> 
+        <h2 class="temp-container" id="city_temp"></h2>
+        <h2 class="status" id="city_status"></h2>
+        <div class="details-container">
+            <h2 id="humidity"></h2>
+            <h2 id="pressure"></h2>
+            <h2 id="wind_speed"></h2>
+            <h2 id="wind_direction"></h2>
+        </div> 
+    </div>
+</body>
+</html>
+
+

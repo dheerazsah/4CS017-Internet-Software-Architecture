@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local storage</title>
+    <script>
+        /*window.onload = function() {
+            document.querySelector('#button').addEventListener('click', () => {
+                var todo_val = document.querySelector('#new_todo').value;
+                localStorage.setItem('todo', todo_val);
+                displayTodo();
+            });*/
+
+        window.onload = function () {
+            displayTodo();
+            //add event listener
+            document.getElementById('button').addEventListener('click', () => {
+                addTodo();
+                displayTodo();
+            });
+
+
+
+            function addTodo() {
+                /*var current_todo = localStorage.getItem('todo');
+                if (current_todo){
+                    console.log(current_todo);
+                    var list_item = `<li>${current_todo}</li>`; //li = items in list
+                    document.querySelector('#todo_lists').innerHTML += list_item;
+                }
+                }
+                displayTodo();*/
+                var new_todo = document.querySelector('#new_todo').value;
+                var all_todos_JSON = localStorage.getItem('todo');
+                var all_todos = [];
+                if (all_todos_JSON) {
+                    all_todos = JSON.parse(all_todos_JSON);
+                }
+                all_todos.push(new_todo);
+                localStorage.setItem('todo', JSON.stringify(all_todos));
+            }
+
+            function displayTodo() {
+
+                var all_todos_JSON = localStorage.getItem('todo');
+                var all_todos = [];
+                if (all_todos_JSON) {
+                    all_todos = JSON.parse(all_todos_JSON);
+                }
+
+                var list_of_items = '';
+                for (const todo of all_todos) {
+                    console.log(todo);
+                    var list_item = `<li>${todo}</li>`;
+                    list_of_items += list_item;
+                }
+                document.querySelector('#todo_lists').innerHTML = list_of_items;
+            }
+        };
+
+        function save() {	
+        var checkbox = document.getElementById('todo');
+        localStorage.setItem('todo', checkbox.checked);	
+    }
+
+        var checked = JSON.parse(localStorage.getItem('todo'));
+            document.getElementById('todo').checked = checked;
+    </script>
+</head>
+
+<body>
+    <input name="new_todo" type="text" id="new_todo" />
+    <button id="button" type="submit">Submit</button>
+    <section>
+        <h1>Your todo</h1>
+        <ul id="todo_lists">
+
+        </ul>
+    </section>
+    <input type="checkbox" id="todo"></input>
+    <button type="button" onClick="save()">save</button>
+</body>
+
+</html>

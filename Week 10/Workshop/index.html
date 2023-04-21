@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo</title>
+    <script>
+        function switchStatus(count){
+            console.log(count + " is clicked");
+            var all_todos_JSON = localStorage.getItem('todo');
+            if(!all_todos_JSON)
+                var all_todos = [];
+            else{
+                var all_todos = JSON.parse(all_todos_JSON);
+                if (all_todos[count]["status"] == true){
+                    document.getElementById("task_" + count).innerText = "Not Done";
+                    all_todos[count]["status"] = false;
+                }
+                else{
+                    document.getElementById("task_" + count).innerText = "Done";
+                    all_todos[count]["status"] = true;
+                    
+                }
+                localStorage.setItem('todo', JSON.stringify(all_todos));
+            }
+            
+        }
+        
+        window.onload = function(){
+            displayList();
+            // Add Event Listener
+            document.getElementById("addBtn").addEventListener('click', ()=>{
+                var all_todos_JSON = localStorage.getItem('todo');
+                if(!all_todos_JSON)
+                    var all_todos = [];
+                else
+                    var all_todos = JSON.parse(all_todos_JSON);
+                var new_todo = document.getElementById('newTodoInput').value;
+                
+                all_todos.push({taskName:new_todo, status:false});
+                localStorage.setItem('todo', JSON.stringify(all_todos));
+                displayList();
+            })
+
+            function displayList(){
+                var all_todos_JSON = localStorage.getItem('todo');
+                if(!all_todos_JSON)
+                    var all_todos = [];
+                else
+                    var all_todos = JSON.parse(all_todos_JSON);
+                var list_of_items = '';
+                var count = 0;
+                for(let todo of all_todos){
+                    var status = (todo["status"]==true)?"Done":"Not Done";
+                    var list_item = `<li>${todo["taskName"]} <button id="task_${count}" onclick="switchStatus(${count});">${status}</button></li>`;
+                    list_of_items += list_item;
+                    count++; 
+                    // console.log(todo);
+                }
+
+                document.getElementById('taskList').innerHTML = list_of_items;
+                
+            }
+
+            
+
+        }
+    </script>
+</head>
+<body>
+    <input type="checkbox" name="" id="checkBox" checked="checked">
+    <input type="text" name="newTodo" id="newTodoInput">
+    <button id="addBtn">Add</button>
+
+    <h1>Todo</h1>
+    <ul id="taskList">
+        
+    </ul>
+</body>
+</html>
